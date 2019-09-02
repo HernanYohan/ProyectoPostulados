@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Candidatos</title>
+    </h:head>
+    <h:body>
+        <h:form id="form" enctype="multipart/form-data">
+            <center>
+            <p:growl id="msgs" showDetail="true" />
+            <h2>Inscribir postulados</h2>
+            <h:panelGrid columns="1" >                 
+                <br></br>
+                <p:inputText id="tarjeton" placeholder="Tarjeton" value="#{index.candidato.cedula}" required="true"/>   
+                <br></br>
+                <p:inputText id="nombre" placeholder="Nombres" value="#{index.candidato.nombre}" required="true"/>
+                <br></br>
+                <p:inputText id="apellido" placeholder="Apellidos" value="#{index.candidato.apellido}" required="true"/>
+            </h:panelGrid>
+            <br></br>
+            <p:commandButton value="Guardar" id="withIcon" action="#{index.agregarCandidato()}" update="form" style="margin-right:20px;" icon="pi pi-save" />
+          </center>
+        </h:form>
+        <h:form id="form2">
+            <p:commandButton value="Votaciones" action="votaciones.xhtml"/>
+        </h:form>
+    </h:body>
+</html>
+
